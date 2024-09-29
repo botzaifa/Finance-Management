@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST", action="/create-user/">
+    <div class="mb-3">
+      <label for="exampleInputUsername" class="form-label">Username</label>
+      <input type="text" class="form-control" id="exampleInputUsername" name="username" aria-describedby="usernameHelp">
+      <div id="usernameHelp" class="form-text">Choose a unique username.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

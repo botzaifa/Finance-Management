@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .centered-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 60px); /* Adjust based on your navbar height */
+        margin: 0; /* Removes default margin */
+    }
+    .card {
+        text-align: center; /* Centers the text inside the card */
+        margin-top: 20px; /* Adds some space above the card */
+    }
+    form {
+        margin-bottom: 20px; /* Adds space below the form */
+    }
+</style>
+
+<div class="centered-container">
+    <h1>Your Finance Managment Chatbot</h1>
+    <form action="/chatbot" method="post">
+        <label for="user_input">User Input:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if chatbot_response %}
+    <div class="card">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"> Financial bot </h5>
+          <p class="card-text"> <span style="white-space: pre-line">{{chatbot_response}}</span> </p>
+          <a href="#" class="btn btn-primary">
+            Nice!
+          </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

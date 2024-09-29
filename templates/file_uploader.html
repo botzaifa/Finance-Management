@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-5">
+    <h2 class="text-center">Upload an Image</h2>
+    <hr>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form action="/Scanner/" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+        <input class="form-control" type="file" name="image" id="formFile">
+        </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+
+{% if data %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <img src="/static/sample.png" class="card-img-top" alt="Uploaded Image">
+            <div class="card-body">
+            <p class="card-text">The Total Amount is: <b>{{ unique }}</b></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-5">
+        <div class="card">
+        <div class="card-body">
+            <p class="card-text">Do you want to Deduct Balance manually?</p>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="btn btn-primary mx-2" onclick="">Yes</a>
+                <a href="#" class="btn btn-primary">No</a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}

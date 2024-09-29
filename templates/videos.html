@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-5 page-heading">Financial Videos for students</h1>
+</div>
+
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4 my-3">
+    {% for i in range(length) %} 
+      <div class="col">
+        <div class="card h-100 custom-card">
+          <img src="{{ data[i].thumbnail }}" class="card-img-top" alt="Video Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">{{ data[i].title }}</h5>
+            <a href="https://www.youtube.com/watch?v={{ data[i].video_id }}" class="btn btn-primary stretched-link">Watch Now</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
