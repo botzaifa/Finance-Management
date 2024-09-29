@@ -1,0 +1,106 @@
+/* Styles for the landing page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background:   Linear-gradient(90deg  , #77f76e,#79e2f5);
+}
+
+.landing-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.landing-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.landing-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3a3535;
+    margin-bottom: 10px;
+}
+
+.landing-description {
+    font-size: 1.2rem;
+    color: #807f7f;
+    margin-bottom: 30px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.landing-btn {
+    margin: 0 10px;
+    background-color: #726f6f;
+    color: #ffffff;
+    border: #3a3535;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 1.0s ease;
+}
+
+.landing-btn:hover {
+    background-color: rgb(5, 36, 36);
+}
+
+
+/* Styles for the content */
+.message {
+    color: #fdfdfd;
+    font-family: "Bookman", URW Bookman L, serif;
+    font-weight: bold;
+}
+
+.message h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.message .description {
+    color: black;
+    font-size: 1.2rem;
+}
+
+/* Styles for the cards */
+.page-heading {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #777777;
+    border-color: #202020;
+}
+
+.btn-primary:hover {
+    background-color: #111111;
+    border-color: #111111;
+}
+
