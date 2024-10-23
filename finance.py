@@ -1,6 +1,6 @@
 from googleapiclient.discovery import build
 
-API_KEY = 'Api_key'
+API_KEY = 'AIzaSyBDrtQ36-R0eUcZlvUq00Pw-zMHGcIYQGQ'
 
 def search_youtube_videos(query, max_results=5):
     # Build the YouTube API service

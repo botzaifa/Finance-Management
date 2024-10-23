@@ -1,18 +1,26 @@
 import cv2
-import pytesseract
-from pytesseract import Output
-import matplotlib.pyplot as plt
+import easyocr
 import re
 
-pytesseract.pytesseract.tesseract_cmd = "C:/Program Files/Tesseract-OCR/tesseract.exe"
-
+# Initialize the EasyOCR reader
+reader = easyocr.Reader(['en'])
 
 def extract_receipt():
-    image = cv2.imread('sample.png', cv2.IMREAD_GRAYSCALE)
-    extracted_text = pytesseract.image_to_string(image)
+    # Read the image using OpenCV
+    image = cv2.imread('static/sample.png')  # Ensure the path is correct
+    # Convert image to RGB
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    
+    # Use EasyOCR to extract text
+    results = reader.readtext(image_rgb)
 
-    # For final amount
+    # Combine the extracted text into a single string
+    extracted_text = ' '.join([result[1] for result in results])
+
+    # Extract monetary amounts from the extracted text
     amounts = re.findall(r'\d+\.\d{2}\b', extracted_text)
     floats = [float(amount) for amount in amounts]
     unique = list(dict.fromkeys(floats))
-    return max(unique)
+    
+    # Return the maximum unique amount
+    return max(unique) if unique else None
